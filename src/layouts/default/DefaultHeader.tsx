@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { routes } from '@/Routes/routes'
-import Button from '@/components/Button/Button'
+import LoginComponent from './LoginComponent'
 
 const DefaultHeader = () => {
   const navs = [{ title: 'Home', link: routes.public.home }]
@@ -19,7 +19,7 @@ const DefaultHeader = () => {
         </section>
 
         <section>
-          <Button className=''>login</Button>
+          <LoginComponent />
         </section>
       </section>
     </header>
