@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { routes } from '@/Routes/routes'
+import Button from '@/components/Button/Button'
 
 const DefaultHeader = () => {
   const navs = [{ title: 'Home', link: routes.public.home }]
@@ -18,7 +19,7 @@ const DefaultHeader = () => {
         </section>
 
         <section>
-          <button className='border border-blue-500 rounded-md px-4 py-1'>login</button>
+          <Button className=''>login</Button>
         </section>
       </section>
     </header>
