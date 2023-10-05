@@ -1,8 +1,11 @@
+import { Suspense } from 'react'
+import AppRouter from './Routes/AppRouter'
+
 function App() {
   return (
-    <section>
-      <p className='text-red-500'>hello world</p>
-    </section>
+    <Suspense fallback={<p>loading...</p>}>
+      <AppRouter />
+    </Suspense>
   )
 }
 
