@@ -1,23 +1,27 @@
 import { useState } from 'react'
 import * as Yup from 'yup'
+import { useUser } from '@/hooks/useUser'
+import { useAppDispatch } from '@/providers/StateManagerProvider/store'
+import { login, logout } from '@/redux/authReducer'
 import Button from '@/components/Button/Button'
 import Modal from '@/components/Modal/Modal'
 import Form from '@/components/Form/Form'
 import TextFormField from '@/components/TextFormField/TextFormField'
 
-interface LoginInputs {
-  email: string
-  password: string
-}
-
-const LoginComponent = () => {
+const AuthComponent = () => {
   const [open, setOpen] = useState(false)
+  const [isLoggedIn] = useUser()
+  const dispatch = useAppDispatch()
 
   const handleOpenLoginModal = () => setOpen(true)
+  const handleCloseLoginModal = () => setOpen(false)
 
-  const handleSubmit = (values: LoginInputs) => {
-    console.log(values)
+  const handleSubmit = () => {
+    dispatch(login(1))
+    handleCloseLoginModal()
   }
+
+  const handleLogout = () => dispatch(logout())
 
   const initialValues = {
     email: '',
@@ -33,10 +37,19 @@ const LoginComponent = () => {
 
   return (
     <>
-      <Button onClick={handleOpenLoginModal}>login</Button>
+      {!isLoggedIn && <Button onClick={handleOpenLoginModal}>login</Button>}
+      {isLoggedIn && (
+        <Button
+          variant='outlined'
+          onClick={handleLogout}
+          className='!text-white hover:bg-blue-800'
+        >
+          logout
+        </Button>
+      )}
       <Modal
         open={open}
-        onClose={() => setOpen(false)}
+        onClose={handleCloseLoginModal}
         title='login'
         outSideCloseEnabled={false}
         body={() => (
@@ -65,4 +78,4 @@ const LoginComponent = () => {
   )
 }
 
-export default LoginComponent
+export default AuthComponent

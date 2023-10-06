@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { routes } from '@/Routes/routes'
-import LoginComponent from './LoginComponent'
+import AuthComponent from '@/components/feature/AuthComponent/AuthComponent'
 
 const DefaultHeader = () => {
   const navs = [{ title: 'Home', link: routes.public.home }]
@@ -19,7 +19,7 @@ const DefaultHeader = () => {
         </section>
 
         <section>
-          <LoginComponent />
+          <AuthComponent />
         </section>
       </section>
     </header>

@@ -1,10 +1,13 @@
 import { Suspense } from 'react'
 import AppRouter from './Routes/AppRouter'
+import StateManagerProvider from './providers/StateManagerProvider/StateManagerProvider'
 
 function App() {
   return (
     <Suspense fallback={<p>loading...</p>}>
-      <AppRouter />
+      <StateManagerProvider>
+        <AppRouter />
+      </StateManagerProvider>
     </Suspense>
   )
 }
