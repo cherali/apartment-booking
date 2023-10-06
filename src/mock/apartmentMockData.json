@@ -1,0 +1,30 @@
+[
+  {
+    "id": 1,
+    "userId": 0,
+    "title" :"test guest house",
+    "price": 150,
+    "createdAt": "2023-10-06T12:50:23.902Z"
+  },
+  {
+    "id": 2,
+    "userId": 0,
+    "title" :"cheap rental house",
+    "price": 50,
+    "createdAt": "2023-10-06T12:55:23.902Z"
+  },
+  {
+    "id": 3,
+    "userId": 0,
+    "title" :"lovely 2-bedroom apartment",
+    "price": 110,
+    "createdAt": "2023-10-06T12:57:23.902Z"
+  },
+  {
+    "id": 4,
+    "userId": 0,
+    "title" :"apartment 3",
+    "price": 95,
+    "createdAt": "2023-10-06T12:59:23.902Z"
+  }
+]

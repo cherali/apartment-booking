@@ -1,12 +1,14 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux'
 import { Action, configureStore, ThunkAction } from '@reduxjs/toolkit'
 import authReducer from '@/redux/authReducer'
+import apartmentReducer from '@/redux/apartmentReducer'
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer.reducer
+    [authReducer.name]: authReducer.reducer,
+    [apartmentReducer.name]: apartmentReducer.reducer,
   },
-  middleware: (getDefaultMiddleware) =>
+  middleware: getDefaultMiddleware =>
     getDefaultMiddleware({ serializableCheck: false }).concat(),
 })
 
@@ -18,7 +20,6 @@ export type AppThunk<ReturnType = void> = ThunkAction<
   unknown,
   Action<string>
 >
-
 
 // Use throughout your app instead of plain `useDispatch` and `useSelector`
 export const useAppDispatch = () => useDispatch<AppDispatch>()
