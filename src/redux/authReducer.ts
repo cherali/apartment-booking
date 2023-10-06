@@ -1,12 +1,14 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
+import type { UserIdType } from '@/models/user'
+
+export interface AuthUserData {
+  id: UserIdType
+}
 
 interface AuthData {
   isLoggedIn: boolean
-  user: {
-    id: number
-  }
+  user: AuthUserData
 }
-
 
 export type AuthReducerInitialStateType = {
   auth: AuthData | null
@@ -14,7 +16,6 @@ export type AuthReducerInitialStateType = {
 
 const initialState: AuthReducerInitialStateType = {
   auth: null,
-
 }
 
 const authReducer = createSlice({
@@ -25,18 +26,15 @@ const authReducer = createSlice({
       state.auth = {
         isLoggedIn: true,
         user: {
-          id: action.payload
-        }
+          id: action.payload,
+        },
       }
     },
-    logout: (state) => {
+    logout: state => {
       state.auth = null
     },
   },
 })
 
-export const {
-  login,
-  logout,
-} = authReducer.actions
+export const { login, logout } = authReducer.actions
 export default authReducer
