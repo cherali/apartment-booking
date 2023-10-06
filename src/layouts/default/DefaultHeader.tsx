@@ -3,7 +3,10 @@ import { routes } from '@/Routes/routes'
 import AuthComponent from '@/components/feature/AuthComponent/AuthComponent'
 
 const DefaultHeader = () => {
-  const navs = [{ title: 'Home', link: routes.public.home }]
+  const navs = [
+    { title: 'Home', link: routes.public.home },
+    { title: 'Reserve', link: routes.private.reserve },
+  ]
 
   return (
     <header className='h-16 shadow-blue-100 shadow-md bg-blue-900 flex items-center'>

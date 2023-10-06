@@ -1,11 +1,11 @@
-import type { ApartmentIdType } from './apartment'
-import type { UserIdType } from './user'
+import type { Apartment } from './apartment'
+
+export type VisitIdType = number
 
 export interface Visit {
-  id: number
-	apartId: ApartmentIdType
-  userId: UserIdType
-	visitDate: string
-	note: string
-	createdAt: string
+  id: VisitIdType
+  apartment: Apartment
+  visitDate: string
+  note: string
+  createdAt: string
 }
