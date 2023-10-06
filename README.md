@@ -26,7 +26,7 @@ Apartment visit booking app using react.
 ## Note That
 + No persistance database provided so after refresh all data will be gone. (visit and user)
 + Mock data initialized in `App.tsx`, so don't forget to remove it.
-+ Location and availability most be added to apartment model but for sake of simplicity this functionality ignored.
++ Location and availability must be added to apartment model but for sake of simplicity this functionality ignored.
 + No api call simulation provided (delay and render loading placeholder).
 + Apartments must have at least of media (image), but the image is not provided by Apartment model, hence only a placeholder is shown at this time.
 + Apartment detail page ignored for simplicity.

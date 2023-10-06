@@ -5,7 +5,7 @@ export const useCheckUser = () => {
 
   function checkIfUserLoggedIn() {
     if (!isUserLoggedIn) {
-      alert('You most logged in first')
+      alert('You must logged in first')
       throw new Error('Login required.')
     }
   }
