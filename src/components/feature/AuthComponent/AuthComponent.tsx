@@ -66,6 +66,7 @@ const AuthComponent = () => {
                 placeholder='password'
                 label='password'
                 type='password'
+                autoComplete='email'
               />
               <Button type='submit' className='mt-6'>
                 submit
