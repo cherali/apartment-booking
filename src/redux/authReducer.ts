@@ -8,11 +8,11 @@ interface AuthData {
 }
 
 
-export type AppReducerInitialStateType = {
+export type AuthReducerInitialStateType = {
   auth: AuthData | null
 }
 
-const initialState: AppReducerInitialStateType = {
+const initialState: AuthReducerInitialStateType = {
   auth: null,
 
 }
